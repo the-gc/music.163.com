@@ -1,13 +1,12 @@
-body,ul,ol,li,input,button,p{
+body,ul,ol,li,dl,dd,h1,h2,h3,h4,input,button,p{
 	margin: 0;
 	padding: 0;
 }
-ul li{
+ul li,ol li{
 	list-style: none;
 }
 a{
 	text-decoration: none;
-	color: white;
 }
 em{
 	font-style: normal;

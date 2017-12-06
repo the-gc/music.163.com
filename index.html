@@ -4,446 +4,7 @@
 	<meta charset="UTF-8">
 	<title>网易云音乐</title>
 	<link rel="stylesheet" href="styles/reset.css">
-	<style>
-	/*firstBar*/
-		.firstBar{
-			height: 70px;
-			background: #242424;
-			border-bottom: 1px solid #000;
-		}
-		.firstBar_content{
-			width: 1100px;
-			margin: 0 auto;
-		}
-		.logo{
-			float: left;
-    		width: 176px;
-    		height: 69px;
-    		text-indent: 30px;
-    		background: url(imgs/logo.png) no-repeat left center;
-		}
-		.logo a{
-			height: 100%;
-			width: 157px;
-			line-height: 69px;
-			font-size: 25px;
-			padding-right: 20px;	
-		}
-		.nav{
-			float: left;
-		}
-		.nav ul li{
-			float: left;
-			height: 70px;
-
-		}
-		.nav a{
-			height: 100%;
-			line-height: 70px;
-			text-align: center;
-			padding: 0 19px;
-			font-size: 14px;
-			display: inline-block;
-		}
-		.nav a:hover{
-			background: #000;
-		}
-		.searchBox{
-			height: 32px;
-			width: 158px;
-			margin-top: 19px;
-			border-radius: 32px;
-			float: right;
-			background-color: #fff;
-			/*background: url(imgs/icon_search.png) no-repeat left center;*/
-			text-indent: 20px;
-		}
-		.searchBox input{
-			height: 18px;
-			line-height: 18px;
-			width: 80%;
-			border: none;
-			outline: medium;
-			display: inline-block;
-			margin-top: 8px;
-		}
-		.videoBox{
-			margin-top: 19px;
-			margin-left: 10px;
-			width: 90px;
-			height: 32px;
-			line-height: 32px;
-			text-align: center;
-			border-radius: 32px;
-			border: 1px solid #ccc;
-			float: right;
-		}
-		.videoBox a{
-			display: inline-block;
-			height: 100%;
-			width: 100%;
-			color: #ccc;
-			font-size: 12px;
-		}
-		.videoBox:hover{
-			transition: border linear .2s;
-			border-color:rgba(141,39,142,.75);
-		}
-		.userBox{
-			width: 60px;
-			height: 32px;
-			float: right;
-			padding-top: 19px;
-			margin-left: 20px;
-		}
-
-
-		/*用户图像悬浮*/
-		.userBox{
-			position: relative;
-		}
-		.userBox ul{
-			position: absolute;
-			left: -44px;
-			top: 62px;
-			background: #333;
-			width: 130px;
-			text-align: center;
-			z-index: 100;
-		}
-		.userBox li{
-			height: 34px;
-		}
-		.userBox li a{
-			display: block;
-			height: 100%;
-			width: 100%;
-			line-height: 34px;
-			text-align: center;
-			font-size: 13px;
-		}
-		.userBox li a:hover{
-			background: #444;
-		}
-		.userBox .border a{
-			border-top: 1px solid #222;
-			border-bottom: 1px solid #222;
-		}
-	/*secondbar*/
-		.redBar{
-			background: #C20C0C;
-			border-bottom: 1px solid #a40011;
-		}
-		.redBar_content{
-			height: 35px;
-			width: 1100px;
-			margin:0 auto;
-		}
-		.redBar_nav{
-			margin-left: 180px;
-		}
-		.redBar_nav li{
-			float: left;
-			height: 35px;
-			text-align: center;
-		}
-		.redBar_nav a{
-			float: left;
-			height: 34px;
-			text-align: center;
-		}
-		.redBar_nav a em{
-			display: inline-block;
-    		height: 20px;
-    		padding: 0 13px;
-    		margin: 7px 17px 0;
-    		border-radius: 20px;
-   			line-height: 21px;
-   			font-size: 13px;
-		}
-		.current a em{
-			background: #ccc;
-		}
-		.redBar_nav li a em:hover{
-			background: #ccc;
-		}
-
-		/*banner*/
-		.banner{
-			background-color: #000;
-		}
-		.banner_content{
-			width: 984px;
-			height: 337px;
-			margin: 0 auto;
-			position: relative;
-		}
-		.banner_list{
-			float: left;
-			width: 730px;
-			height: 337px;
-		}
-		.banner_list ul{
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			position: relative;
-		}
-
-		.downloadPic{
-			float: left;
-			opacity: 0.8;
-		}
-		/*bannerList*/
-		.banner_list li{
-			float: left;
-			top: 0;
-			
-		}
-		.banner_list .list1{
-			position: absolute;
-			left: 0;
-		}
-		.banner_list .list2{
-			position: absolute;
-			left: 730px;
-		}
-		.banner_list .list3{
-			position: absolute;
-			left: 1460px;
-		}
-		.banner_list .list4{
-			position: absolute;
-			left: 2190px;
-		}
-		.banner_list .list5{
-			position: absolute;
-			left: 2920px;
-		}
-		.banner_list .list6{
-			position: absolute;
-			left: 3640px;
-		}
-		.banner_list .list7{
-			position: absolute;
-			left: 4370px;
-		}
-		.banner_list .list8{
-			position: absolute;
-			left: 5100px;
-		}
-		/*banner 圆点*/
-		.banner_dot{
-			position: absolute;
-			left: 0;
-			top: 310px;
-			text-align: center;
-			width: 730px;
-			height: 20px;
-		}
-		.banner_dot a{
-			display: inline-block;
-			margin-left: 10px;
-			width: 8px;
-			height: 8px;
-			border-radius: 50%;
-			background: #ccc;
-		}
-		.banner_dot a:hover{
-			background: #C20C0C;
-		}
-		/*.active{
-			background: #C20C0C;
-		}*/
-		.btn{
-			display: inline-block;
-		 	position: absolute;
-		 	top: 40%;
-			width: 37px;
-			height: 63px;
-			text-align: center;
-			font-size: 40px;
-			color: #fff;
-		 }
-		.leftBtn{
-			left: -68px;
-		}
-		.rightBtn{
-			right: -68px;	
-		}
-		.btn:hover{
-			background: rgba(87,77,77,0.5);
-		}
-
-		/*content*/
-		.content_wrap{
-			width: 984px;
-			margin: 0 auto;
-		}
-		
-
-
-
-
-
-		/*content leftArea*/
-		.leftArea a{
-			color: #333;
-		}
-		.leftArea{
-			width: 690px;
-			border: 1px solid #ccc;
-			padding: 20px 20px 40px 20px;
-		}
-		.itemTitle{
-			height: 33px;
-			padding: 0 10px 0 0;
-			border-bottom: 2px solid #C10D0C;
-			line-height: 33px;
-		}
-		.title{
-			float: left;
-			font-size: 20px;
-		}
-		.item_nav{
-			float: left;
-			margin-left: 20px;
-		}
-		.item_nav li{
-			float: left;
-			width: 40px;
-			text-align: center;
-		}
-		.item_nav a{
-			display: inline-block;
-			height: 33px;
-			line-height: 33px;
-		}
-		.more{
-			float: right;
-		}
-		.more:hover,.item_nav a:hover{
-			text-decoration: underline;
-		}
-
-		.itemList{
-			margin-top: 20px;
-		}
-		.itemList li.noPadding{
-			padding: none;
-		}
-		.itemList li{
-			float: left;
-			width: 142px;
-			height: 204px;
-			margin-left: 40px;
-		}
-		ul .noMargin{
-			margin-left: 0px;
-		}
-		a.imgTx{              //注意优先度值
-			color: #000;
-			font-size: 14px;
-		}
-		a.imgTx:hover{
-			text-decoration: underline;
-		}
-
-		/*日常推荐*/
-		.recommend{
-			font-size: 12px;
-			color: #999;
-		}
-		.dec{
-
-		}
-		.dec em{
-			display: inline-block;
-			line-height: 18px;
-			font-size: 13px;
-			color: #999;
-		}
-		.noInterestingBtn{
-			display: none;
-			height: 26px;
-			width: 63px;
-			margin-top: 10px;
-			text-align: center;
-			line-height: 26px;
-			color: #666;
-			font-size: 12px;
-			border: 1px solid #999;
-		}
-		.adPic{
-			margin-top: 40px;
-			margin-bottom: 20px;
-		}
-
-
-		.item_content{
-			position: relative;
-			height: 186px;
-			background: #f5f5f5;
-			margin: 20px 0 37px;
-			border: 1px solid #d3d3d3;
-		}
-		.leftIcon{
-			position: absolute;
-			top: 71px;
-			left: 4px;
-			width: 17px;
-			height: 17px;
-		}
-		.rightIcon{
-			position: absolute;
-			top: 71px;
-			right: 4px;
-			width: 17px;
-			height: 17px;
-		}
-		.roll{
-			float: left;
-			margin: 0 20px;
-		}
-		.item_wrap{
-			margin-top: 28px;
-		}
-		.item_wrap li{
-			float: left;
-			margin-left: 10px;
-		}
-		.songName a{
-			font-size: 14px;
-			color: #000;
-		}
-		.singer a{
-			font-size: 14px;
-			color: #666;
-		}
-
-		.dlBody dt{
-			height: 100px;
-			padding: 20px 0 0 19px;
-		}
-		.pic{
-			float: left;
-		}
-		.tit{
-			float: left;
-			margin-top: 30px;
-		}
-		.tit a{
-			color: #333;
-			font-size: 14px;
-			font-weight: bold;
-		}
-		.dlbody ol{
-
-		}
-		.dlbody ol li{
-			height: 32px;
-		}
-</style>
+	<link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
 	<div class="firstBar">
@@ -533,7 +94,7 @@
 		</div>
 	</div>
 	<div class="content">
-		<div class="content_wrap">
+		<div class="content_wrap clearfix">
 			<div class="leftArea">
 				<div class="itemTitle">
 					<a  class="title" href="">热门推荐</a>
@@ -668,33 +229,229 @@
 					<a href="" class="more">更多</a>
 				</div>
 
-				<div class="dlBody">
+				<div class="dlBody clearfix">
 					<dl>
 						<dt>
 							<div class="pic"><img src="imgs/pic1.png" alt=""></div>
 							<div class="tit"><a href="">云音乐飙升榜</a></div>
 						</dt>
 						<dd>
-							<ol>
-								<li><a href="">All Falls Down</a></li>
-								<li><a href="">蓝色降落伞</a></li>
-								<li><a href="">Burning</a></li>
-								<li><a href="">...Ready For It?</a></li>
-								<li><a href="">8000 (Prod.By DROYC)</a></li>
-								<li><a href="">Take Her Place</a></li>
-								<li><a href="">梦中海</a></li>
-								<li><a href="">扬州姑娘</a></li>
-								<li><a href="">Psycho(Pt.2)</a></li>
-								<li><a href="">桂落.红尘记</a></li>
+							<ol class="musicList">
+								<li><span class="num color">1</span><a href="">All Falls Down</a></li>
+								<li><span class="num color">2</span><a href="">蓝色降落伞</a></li>
+								<li><span class="num color">3</span><a href="">Burning</a></li>
+								<li><span class="num">4</span><a href="">...Ready For It?</a></li>
+								<li><span class="num">5</span><a href="">8000 </a></li>
+								<li><span class="num">6</span><a href="">Take Her Place</a></li>
+								<li><span class="num">7</span><a href="">梦中海</a></li>
+								<li><span class="num">8</span><a href="">扬州姑娘</a></li>
+								<li><span class="num">9</span><a href="">Psycho(Pt.2)</a></li>
+								<li><span class="num">10</span><a href="">桂落.红尘记</a></li>
+								<li><a class="getMore" href="">查看全部>></a></li>
 							</ol>
 						</dd>
 					</dl>
-					<dl></dl>
-					<dl></dl>
+					<dl >
+                        <dt>
+							<div class="pic"><img src="imgs/pic2.png" alt=""></div>
+							<div class="tit"><a href="">云音乐新歌榜</a></div>
+						</dt>
+						<dd>
+							<ol class="musicList">
+								<li><span class="num color">1</span><a href="">All Falls Down</a></li>
+								<li><span class="num color">2</span><a href="">蓝色降落伞</a></li>
+								<li><span class="num color">3</span><a href="">Burning</a></li>
+								<li><span class="num">4</span><a href="">...Ready For It?</a></li>
+								<li><span class="num">5</span><a href="">8000 </a></li>
+								<li><span class="num">6</span><a href="">Take Her Place</a></li>
+								<li><span class="num">7</span><a href="">梦中海</a></li>
+								<li><span class="num">8</span><a href="">扬州姑娘</a></li>
+								<li><span class="num">9</span><a href="">Psycho(Pt.2)</a></li>
+								<li><span class="num">10</span><a href="">桂落.红尘记</a></li>
+								<li><a class="getMore" href="">查看全部>></a></li>
+							</ol>
+						</dd>
+					</dl>
+					<dl class="noBorder">
+                        <dt>
+							<div class="pic"><img src="imgs/pic3.png" alt=""></div>
+							<div class="tit"><a href="">云音乐原创榜</a></div>
+						</dt>
+						<dd>
+							<ol class="musicList">
+								<li><span class="num color">1</span><a href="">All Falls Down</a></li>
+								<li><span class="num color">2</span><a href="">蓝色降落伞</a></li>
+								<li><span class="num color">3</span><a href="">Burning</a></li>
+								<li><span class="num">4</span><a href="">...Ready For It?</a></li>
+								<li><span class="num">5</span><a href="">8000 </a></li>
+								<li><span class="num">6</span><a href="">Take Her Place</a></li>
+								<li><span class="num">7</span><a href="">梦中海</a></li>
+								<li><span class="num">8</span><a href="">扬州姑娘</a></li>
+								<li><span class="num">9</span><a href="">Psycho(Pt.2)</a></li>
+								<li><span class="num">10</span><a href="">桂落.红尘记</a></li>
+								<li><a class="getMore" href="">查看全部>></a></li>
+							</ol>
+						</dd>
+					</dl>
 				</div>				
 			</div>
-			<div class="rightArea"></div>
+			<div class="rightArea">
+                <div class="userInfoBox ">
+					<div class="user clearfix">
+						<div class="userInfo">
+							<a href=""><img src="imgs/userpic.png" alt=""></a>
+						</div>
+						<div class="info">
+							<h4><a href="">西元前hello</a></h4>
+							<p><a href="">lv.6</a></p>
+							<div class="signBtn">
+								<a href="">签到</a>
+							</div>
+						</div>
+					</div>
+					<ul class="infoList clearfix">
+						<li><a href=""><strong>0</strong><span>动态</span></a></li>
+						<li><a href=""><strong>4</strong><span>关注</span></a></li>
+						<li class="last"><a href=""><strong>0</strong><span>粉丝</span></a></li>
+					</ul>
+                </div>
+                <div class="singerListBox">
+                    <div class="singerTitle">
+						<span>入驻歌手</span>
+						<a href="">查看更多></a>
+                    </div>
+                    <ul class="singerList">
+						<li>
+							<a href="">
+								<div class="singerPic"><img src="imgs/singer1.png" alt=""></div>
+								<div class="singerInfo">
+									<h4>张惠妹</h4>
+									<p>台湾歌手张惠妹</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="singerPic"><img src="imgs/singer2.png" alt=""></div>
+								<div class="singerInfo">
+									<h4>Fine乐团</h4>
+									<p>独立音乐人</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="singerPic"><img src="imgs/singer3.png" alt=""></div>
+								<div class="singerInfo">
+									<h4>禹晓利</h4>
+									<p>民谣歌手</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="singerPic"><img src="imgs/singer4.png" alt=""></div>
+								<div class="singerInfo">
+									<h4>音乐人赵雷</h4>
+									<p>民谣歌手</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="singerPic"><img src="imgs/singer5.png" alt=""></div>
+								<div class="singerInfo">
+									<h4>王三溥</h4>
+									<p>音乐人</p>
+								</div>
+							</a>
+						</li>
+                    </ul>
+                    <div class="applyBtn">
+						<a href="">申请成为网易音乐人</a>
+                    </div>
+                </div>
+				<div class="anchorBox">
+					<div class="anchorTitle">
+						<span>热门主播</span>
+					</div>
+					<ul class="anchorList">
+						<li>
+							<a href="">
+								<div class="anchorPic"><img src="imgs/anchor1.png" alt=""></div>
+								<div class="anchorInfo">
+									<a>陈立</a>
+									<p>心理学家、美食学家</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="anchorPic"><img src="imgs/anchor2.png" alt=""></div>
+								<div class="anchorInfo">
+									<a>Dj 艳秋</a>
+									<p>著名音乐节目主持人</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="anchorPic"><img src="imgs/anchor3.png" alt=""></div>
+								<div class="anchorInfo">
+									<a>国家大剧院音乐频道</a>
+									<p>国家大剧院古典音乐</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="anchorPic"><img src="imgs/anchor4.png" alt=""></div>
+								<div class="anchorInfo">
+									<a>谢谢收听</a>
+									<p>南京电台主持人</p>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="anchorPic"><img src="imgs/anchor5.png" alt=""></div>
+								<div class="anchorInfo">
+									<a>DJ 晓苏</a>
+									<p>独立DJ</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+	</div>
+	<div class="footer">
+        <div class="fo-wrap clearfix">
+			<div class="footerInfo">
+				<p class="footerList">
+					<a href="">关于网易</a>
+					<span>|</span>
+					<a href="">客户服务</a>
+					<span>|</span>
+					<a href="">服务条款</a>
+					<span>|</span>
+					<a href="">网站导航</a>
+				</p>
+				<div class="footerTx">
+					<p>网易公司版权所有@1997-2017</p>
+					<p>杭州乐读科技有限公司运营：<a href="">浙网文[2015]0415-135号</a></p>
+				</div>
+			</div>
+			<div class="footerIcon">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+        </div>
 	</div>
 
 	<script src="scripts/jquery-3.2.1.js"></script>
